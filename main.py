@@ -172,8 +172,8 @@ def predict_emotion(text_input: TextInput):
     padded_sequence = pad_sequences(
         tokenized_text,
         maxlen=max_sequence_length,
-        padding="post",
-        truncating="post"
+        padding="pre",
+        truncating="pre"
     )
 
     probabilites     = BiGRU_model.predict(padded_sequence, verbose=0)[0]
